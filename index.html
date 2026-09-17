@@ -7,175 +7,272 @@
 <title>The Roar | Bar & Restaurant</title>
 
 <style>
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-    body {
-        min-height: 100vh;
-        background:
-            radial-gradient(circle at top, #242424 0%, #111 45%, #070707 100%);
-        color: white;
-        font-family: Arial, Helvetica, sans-serif;
-        display: flex;
-        justify-content: center;
-    }
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at top, #242424 0%, #111 45%, #070707 100%);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
-    .page {
-        width: 100%;
-        max-width: 480px;
-        min-height: 100vh;
-        padding: 40px 22px 35px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+.page {
+    width: 100%;
+    max-width: 480px;
+    min-height: 100vh;
+    margin: auto;
+    padding: 25px 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-    .logo {
-        width: 230px;
-        max-width: 75%;
-        height: auto;
-        margin-bottom: 25px;
-        filter: drop-shadow(0 8px 20px rgba(0,0,0,.45));
-    }
+/* LOGO */
 
-    .welcome {
-        font-size: 13px;
-        letter-spacing: 4px;
-        color: #aaa;
-        text-transform: uppercase;
-        margin-bottom: 8px;
-    }
+.logo {
+    width: 185px;
+    max-width: 60%;
+    height: auto;
+    margin: 10px 0 32px;
+    filter: drop-shadow(0 8px 20px rgba(0,0,0,.45));
+}
 
-    h1 {
-        font-size: 29px;
-        text-align: center;
-        margin-bottom: 7px;
-    }
+/* SCREENS */
 
-    .subtitle {
-        color: #999;
-        font-size: 15px;
-        margin-bottom: 38px;
-    }
+.screen {
+    width: 100%;
+}
 
-    .menu-card {
-        width: 100%;
-        min-height: 125px;
-        background: linear-gradient(145deg, #1d1d1d, #121212);
-        border: 1px solid #333;
-        border-radius: 18px;
-        margin-bottom: 17px;
-        padding: 25px;
+.hidden {
+    display: none;
+}
 
-        display: flex;
-        align-items: center;
+/* MAIN MENU CARDS */
 
-        text-decoration: none;
-        color: white;
+.menu-card {
+    width: 100%;
+    min-height: 118px;
 
-        box-shadow: 0 12px 30px rgba(0,0,0,.25);
-        transition: .2s;
-    }
+    background: linear-gradient(145deg, #1d1d1d, #121212);
+    border: 1px solid #383838;
+    border-radius: 18px;
 
-    .menu-card:active {
-        transform: scale(.98);
-    }
+    margin-bottom: 18px;
+    padding: 22px;
 
-    .icon {
-        width: 64px;
-        height: 64px;
-        min-width: 64px;
+    display: flex;
+    align-items: center;
 
-        background: #e31b23;
-        border-radius: 16px;
+    text-decoration: none;
+    color: white;
 
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    box-shadow: 0 12px 30px rgba(0,0,0,.25);
 
-        font-size: 31px;
-        margin-right: 20px;
-    }
+    cursor: pointer;
+}
 
-    .card-text {
-        flex: 1;
-    }
+.menu-card:active {
+    transform: scale(.98);
+    border-color: #e31b23;
+}
 
-    .card-title {
-        font-size: 21px;
-        font-weight: 800;
-        letter-spacing: 1px;
-    }
+.icon {
+    width: 68px;
+    height: 68px;
+    min-width: 68px;
 
-    .card-description {
-        color: #999;
-        margin-top: 6px;
-        font-size: 14px;
-    }
+    background: #e31b23;
+    border-radius: 17px;
 
-    .arrow {
-        color: #e31b23;
-        font-size: 27px;
-        margin-left: 10px;
-    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    .footer {
-        margin-top: auto;
-        padding-top: 35px;
-        color: #555;
-        font-size: 11px;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-    }
+    font-size: 32px;
+    margin-right: 20px;
+}
 
-    /* COMING SOON */
+.card-text {
+    flex: 1;
+}
 
-    #notice {
-        position: fixed;
-        inset: 0;
-        background: rgba(0,0,0,.82);
-        backdrop-filter: blur(8px);
+.card-title {
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
 
-        display: none;
-        justify-content: center;
-        align-items: center;
+.card-description {
+    color: #999;
+    margin-top: 7px;
+    font-size: 14px;
+}
 
-        padding: 25px;
-    }
+.arrow {
+    color: #e31b23;
+    font-size: 30px;
+    font-weight: bold;
+}
 
-    .notice-box {
-        width: 100%;
-        max-width: 360px;
-        background: #171717;
-        border: 1px solid #333;
-        border-radius: 20px;
-        padding: 35px 25px;
-        text-align: center;
-    }
+/* LANGUAGE SCREEN */
 
-    .notice-box h2 {
-        margin-bottom: 10px;
-        font-size: 25px;
-    }
+.back {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
 
-    .notice-box p {
-        color: #999;
-        margin-bottom: 25px;
-    }
+    color: #aaa;
+    font-size: 14px;
 
-    .close {
-        border: 0;
-        background: #e31b23;
-        color: white;
-        padding: 14px 30px;
-        border-radius: 10px;
-        font-size: 16px;
-        font-weight: bold;
-        cursor: pointer;
-    }
+    margin-bottom: 25px;
+
+    cursor: pointer;
+}
+
+.back-arrow {
+    color: #e31b23;
+    font-size: 23px;
+}
+
+.language-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.language-icon {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.language-header h2 {
+    font-size: 26px;
+    margin-bottom: 7px;
+}
+
+.language-header p {
+    color: #888;
+    font-size: 14px;
+}
+
+/* LANGUAGE BUTTON */
+
+.language {
+    width: 100%;
+
+    background: linear-gradient(145deg, #1d1d1d, #121212);
+    border: 1px solid #333;
+    border-radius: 14px;
+
+    padding: 17px 19px;
+    margin-bottom: 11px;
+
+    display: flex;
+    align-items: center;
+
+    color: white;
+    text-decoration: none;
+
+    cursor: pointer;
+}
+
+.language:active {
+    transform: scale(.98);
+    border-color: #e31b23;
+}
+
+.flag {
+    font-size: 28px;
+    width: 48px;
+}
+
+.language-name {
+    flex: 1;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.language-arrow {
+    color: #e31b23;
+    font-size: 25px;
+}
+
+/* FOOTER */
+
+.footer {
+    margin-top: auto;
+    padding-top: 25px;
+
+    color: #555;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* POPUP */
+
+#notice {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0,0,0,.85);
+    backdrop-filter: blur(8px);
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px;
+    z-index: 100;
+}
+
+.notice-box {
+    width: 100%;
+    max-width: 350px;
+
+    background: #171717;
+    border: 1px solid #333;
+    border-radius: 20px;
+
+    padding: 35px 25px;
+    text-align: center;
+}
+
+.notice-icon {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.notice-box h2 {
+    margin-bottom: 10px;
+}
+
+.notice-box p {
+    color: #999;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+.close {
+    width: 100%;
+    border: 0;
+
+    background: #e31b23;
+    color: white;
+
+    padding: 14px;
+
+    border-radius: 11px;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
 
 </style>
 </head>
@@ -184,59 +281,200 @@
 
 <div class="page">
 
-    <img src="logo.png" class="logo" alt="The Roar">
+    <!-- LOGO -->
 
-    <div class="welcome">Welcome to</div>
-
-    <h1>THE ROAR</h1>
-
-    <div class="subtitle">Bar & Restaurant</div>
+    <img src="logo.png"
+         class="logo"
+         alt="The Roar Bar & Restaurant">
 
 
-    <a href="#" class="menu-card" onclick="comingSoon(); return false;">
+    <!-- MAIN SCREEN -->
 
-        <div class="icon">🍽️</div>
+    <div id="mainScreen" class="screen">
 
-        <div class="card-text">
-            <div class="card-title">FOOD MENU</div>
-            <div class="card-description">Restaurant Menu</div>
+        <div class="menu-card"
+             onclick="openLanguages('food')">
+
+            <div class="icon">🍽️</div>
+
+            <div class="card-text">
+                <div class="card-title">
+                    FOOD MENU
+                </div>
+
+                <div class="card-description">
+                    Restaurant Menu
+                </div>
+            </div>
+
+            <div class="arrow">›</div>
+
         </div>
 
-        <div class="arrow">›</div>
 
-    </a>
+        <div class="menu-card"
+             onclick="openLanguages('bar')">
 
+            <div class="icon">🍸</div>
 
-    <a href="#" class="menu-card" onclick="comingSoon(); return false;">
+            <div class="card-text">
+                <div class="card-title">
+                    BAR MENU
+                </div>
 
-        <div class="icon">🍸</div>
+                <div class="card-description">
+                    Drinks & Cocktails
+                </div>
+            </div>
 
-        <div class="card-text">
-            <div class="card-title">BAR MENU</div>
-            <div class="card-description">Drinks & Cocktails</div>
+            <div class="arrow">›</div>
+
         </div>
 
-        <div class="arrow">›</div>
+    </div>
 
-    </a>
+
+    <!-- LANGUAGE SCREEN -->
+
+    <div id="languageScreen"
+         class="screen hidden">
+
+        <div class="back"
+             onclick="goBack()">
+
+            <span class="back-arrow">‹</span>
+            BACK
+
+        </div>
+
+
+        <div class="language-header">
+
+            <div id="menuIcon"
+                 class="language-icon">
+                🍽️
+            </div>
+
+            <h2 id="menuTitle">
+                Food Menu
+            </h2>
+
+            <p>
+                Choose your language
+            </p>
+
+        </div>
+
+
+        <!-- RUSSIAN -->
+
+        <div class="language"
+             onclick="openMenu('ru')">
+
+            <div class="flag">🇷🇺</div>
+
+            <div class="language-name">
+                Русский
+            </div>
+
+            <div class="language-arrow">›</div>
+
+        </div>
+
+
+        <!-- ENGLISH -->
+
+        <div class="language"
+             onclick="openMenu('en')">
+
+            <div class="flag">🇬🇧</div>
+
+            <div class="language-name">
+                English
+            </div>
+
+            <div class="language-arrow">›</div>
+
+        </div>
+
+
+        <!-- VIETNAMESE -->
+
+        <div class="language"
+             onclick="openMenu('vi')">
+
+            <div class="flag">🇻🇳</div>
+
+            <div class="language-name">
+                Tiếng Việt
+            </div>
+
+            <div class="language-arrow">›</div>
+
+        </div>
+
+
+        <!-- KOREAN -->
+
+        <div class="language"
+             onclick="openMenu('ko')">
+
+            <div class="flag">🇰🇷</div>
+
+            <div class="language-name">
+                한국어
+            </div>
+
+            <div class="language-arrow">›</div>
+
+        </div>
+
+
+        <!-- CHINESE -->
+
+        <div class="language"
+             onclick="openMenu('zh')">
+
+            <div class="flag">🇨🇳</div>
+
+            <div class="language-name">
+                中文
+            </div>
+
+            <div class="language-arrow">›</div>
+
+        </div>
+
+    </div>
 
 
     <div class="footer">
-        The Roar • Bar & Restaurant
+        THE ROAR • BAR & RESTAURANT
     </div>
 
 </div>
 
 
-<div id="notice" onclick="closeNotice()">
+<!-- COMING SOON -->
 
-    <div class="notice-box" onclick="event.stopPropagation()">
+<div id="notice"
+     onclick="closeNotice()">
+
+    <div class="notice-box"
+         onclick="event.stopPropagation()">
+
+        <div class="notice-icon">
+            🦁
+        </div>
 
         <h2>Coming Soon</h2>
 
-        <p>The menu will be available soon.</p>
+        <p>
+            This menu will be available soon.
+        </p>
 
-        <button class="close" onclick="closeNotice()">
+        <button class="close"
+                onclick="closeNotice()">
             CLOSE
         </button>
 
@@ -247,12 +485,96 @@
 
 <script>
 
-function comingSoon() {
-    document.getElementById("notice").style.display = "flex";
+let selectedMenu = "";
+
+
+/* OPEN LANGUAGE SELECTION */
+
+function openLanguages(type) {
+
+    selectedMenu = type;
+
+    document
+        .getElementById("mainScreen")
+        .classList.add("hidden");
+
+    document
+        .getElementById("languageScreen")
+        .classList.remove("hidden");
+
+
+    if (type === "food") {
+
+        document.getElementById("menuIcon")
+            .innerText = "🍽️";
+
+        document.getElementById("menuTitle")
+            .innerText = "Food Menu";
+
+    }
+
+    if (type === "bar") {
+
+        document.getElementById("menuIcon")
+            .innerText = "🍸";
+
+        document.getElementById("menuTitle")
+            .innerText = "Bar Menu";
+
+    }
+
 }
 
+
+/* BACK */
+
+function goBack() {
+
+    document
+        .getElementById("languageScreen")
+        .classList.add("hidden");
+
+    document
+        .getElementById("mainScreen")
+        .classList.remove("hidden");
+
+}
+
+
+/* MENU LINKS */
+
+function openMenu(language) {
+
+    /*
+    ПОЗЖЕ СЮДА ДОБАВИМ ССЫЛКИ:
+
+    Например:
+
+    if (selectedMenu === "food" && language === "ru") {
+        window.location.href = "ССЫЛКА";
+        return;
+    }
+
+    if (selectedMenu === "bar" && language === "en") {
+        window.location.href = "ССЫЛКА";
+        return;
+    }
+
+    */
+
+    document.getElementById("notice")
+        .style.display = "flex";
+
+}
+
+
+/* CLOSE POPUP */
+
 function closeNotice() {
-    document.getElementById("notice").style.display = "none";
+
+    document.getElementById("notice")
+        .style.display = "none";
+
 }
 
 </script>
