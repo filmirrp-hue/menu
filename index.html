@@ -1,98 +1,261 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Restaurant Menu</title>
+<title>The Roar | Bar & Restaurant</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
 
-        body {
-            margin: 0;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: #111;
-            color: white;
-            font-family: Arial, sans-serif;
-        }
+    body {
+        min-height: 100vh;
+        background:
+            radial-gradient(circle at top, #242424 0%, #111 45%, #070707 100%);
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        display: flex;
+        justify-content: center;
+    }
 
-        .container {
-            width: 90%;
-            max-width: 420px;
-            text-align: center;
-        }
+    .page {
+        width: 100%;
+        max-width: 480px;
+        min-height: 100vh;
+        padding: 40px 22px 35px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-        h1 {
-            margin-bottom: 8px;
-        }
+    .logo {
+        width: 230px;
+        max-width: 75%;
+        height: auto;
+        margin-bottom: 25px;
+        filter: drop-shadow(0 8px 20px rgba(0,0,0,.45));
+    }
 
-        p {
-            color: #aaa;
-            margin-bottom: 30px;
-        }
+    .welcome {
+        font-size: 13px;
+        letter-spacing: 4px;
+        color: #aaa;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+    }
 
-        .language {
-            display: block;
-            width: 100%;
-            padding: 18px;
-            margin: 12px 0;
+    h1 {
+        font-size: 29px;
+        text-align: center;
+        margin-bottom: 7px;
+    }
 
-            background: #222;
-            color: white;
+    .subtitle {
+        color: #999;
+        font-size: 15px;
+        margin-bottom: 38px;
+    }
 
-            text-decoration: none;
-            font-size: 19px;
+    .menu-card {
+        width: 100%;
+        min-height: 125px;
+        background: linear-gradient(145deg, #1d1d1d, #121212);
+        border: 1px solid #333;
+        border-radius: 18px;
+        margin-bottom: 17px;
+        padding: 25px;
 
-            border: 1px solid #444;
-            border-radius: 12px;
-        }
+        display: flex;
+        align-items: center;
 
-        .language:hover {
-            background: #333;
-        }
-    </style>
+        text-decoration: none;
+        color: white;
+
+        box-shadow: 0 12px 30px rgba(0,0,0,.25);
+        transition: .2s;
+    }
+
+    .menu-card:active {
+        transform: scale(.98);
+    }
+
+    .icon {
+        width: 64px;
+        height: 64px;
+        min-width: 64px;
+
+        background: #e31b23;
+        border-radius: 16px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        font-size: 31px;
+        margin-right: 20px;
+    }
+
+    .card-text {
+        flex: 1;
+    }
+
+    .card-title {
+        font-size: 21px;
+        font-weight: 800;
+        letter-spacing: 1px;
+    }
+
+    .card-description {
+        color: #999;
+        margin-top: 6px;
+        font-size: 14px;
+    }
+
+    .arrow {
+        color: #e31b23;
+        font-size: 27px;
+        margin-left: 10px;
+    }
+
+    .footer {
+        margin-top: auto;
+        padding-top: 35px;
+        color: #555;
+        font-size: 11px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+
+    /* COMING SOON */
+
+    #notice {
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,.82);
+        backdrop-filter: blur(8px);
+
+        display: none;
+        justify-content: center;
+        align-items: center;
+
+        padding: 25px;
+    }
+
+    .notice-box {
+        width: 100%;
+        max-width: 360px;
+        background: #171717;
+        border: 1px solid #333;
+        border-radius: 20px;
+        padding: 35px 25px;
+        text-align: center;
+    }
+
+    .notice-box h2 {
+        margin-bottom: 10px;
+        font-size: 25px;
+    }
+
+    .notice-box p {
+        color: #999;
+        margin-bottom: 25px;
+    }
+
+    .close {
+        border: 0;
+        background: #e31b23;
+        color: white;
+        padding: 14px 30px;
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+</style>
 </head>
 
 <body>
 
-<div class="container">
+<div class="page">
 
-    <h1>MENU</h1>
+    <img src="logo.png" class="logo" alt="The Roar">
 
-    <p>Choose your language</p>
+    <div class="welcome">Welcome to</div>
 
-    <a class="language"
-       href="ССЫЛКА_НА_РУССКИЙ_PDF">
-        🇷🇺 Русский
+    <h1>THE ROAR</h1>
+
+    <div class="subtitle">Bar & Restaurant</div>
+
+
+    <a href="#" class="menu-card" onclick="comingSoon(); return false;">
+
+        <div class="icon">🍽️</div>
+
+        <div class="card-text">
+            <div class="card-title">FOOD MENU</div>
+            <div class="card-description">Restaurant Menu</div>
+        </div>
+
+        <div class="arrow">›</div>
+
     </a>
 
-    <a class="language"
-       href="ССЫЛКА_НА_АНГЛИЙСКИЙ_PDF">
-        🇬🇧 English
+
+    <a href="#" class="menu-card" onclick="comingSoon(); return false;">
+
+        <div class="icon">🍸</div>
+
+        <div class="card-text">
+            <div class="card-title">BAR MENU</div>
+            <div class="card-description">Drinks & Cocktails</div>
+        </div>
+
+        <div class="arrow">›</div>
+
     </a>
 
-    <a class="language"
-       href="ССЫЛКА_НА_ВЬЕТНАМСКИЙ_PDF">
-        🇻🇳 Tiếng Việt
-    </a>
 
-    <a class="language"
-       href="ССЫЛКА_НА_КОРЕЙСКИЙ_PDF">
-        🇰🇷 한국어
-    </a>
-
-    <a class="language"
-       href="ССЫЛКА_НА_КИТАЙСКИЙ_PDF">
-        🇨🇳 中文
-    </a>
+    <div class="footer">
+        The Roar • Bar & Restaurant
+    </div>
 
 </div>
+
+
+<div id="notice" onclick="closeNotice()">
+
+    <div class="notice-box" onclick="event.stopPropagation()">
+
+        <h2>Coming Soon</h2>
+
+        <p>The menu will be available soon.</p>
+
+        <button class="close" onclick="closeNotice()">
+            CLOSE
+        </button>
+
+    </div>
+
+</div>
+
+
+<script>
+
+function comingSoon() {
+    document.getElementById("notice").style.display = "flex";
+}
+
+function closeNotice() {
+    document.getElementById("notice").style.display = "none";
+}
+
+</script>
 
 </body>
 </html>
